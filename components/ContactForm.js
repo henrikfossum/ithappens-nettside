@@ -53,7 +53,7 @@ const ContactForm = ({ isOpen, onClose }) => {
         onClick={onClose}
       />
 
-      {/* Form Container - Positioned differently for mobile/desktop */}
+      {/* Form Container */}
       <div className={`fixed z-50 transition-all duration-300 
         md:bottom-4 md:right-4 
         ${isOpen 
@@ -64,17 +64,13 @@ const ContactForm = ({ isOpen, onClose }) => {
           ? 'bottom-0 left-0 right-0 md:left-auto md:right-4' 
           : 'translate-y-full md:transform-none'}`}>
         
-        {/* Form Card */}
-        <div className="bg-white dark:bg-gray-800 rounded-t-xl md:rounded-xl shadow-2xl 
-         w-full md:w-80 max-h-[90vh] md:max-h-[500px] overflow-auto">
-          
+        <div className="bg-white dark:bg-gray-800 rounded-t-xl md:rounded-xl shadow-2xl w-full md:w-80">
           {/* Header */}
-          <div className="bg-gradient-to-r from-[#1E293B] to-[#334BA1] p-4 
-            sticky top-0 rounded-t-xl flex justify-between items-center">
-            <h3 className="text-lg font-bold text-white">Kontakt oss</h3>
+          <div className="bg-gradient-to-r from-[#1E293B] to-[#334BA1] p-3 rounded-t-xl flex justify-between items-center">
+            <h3 className="text-base font-bold text-white">Kontakt oss</h3>
             <button 
               onClick={onClose}
-              className="text-gray-300 hover:text-white transition-colors p-2"
+              className="text-gray-300 hover:text-white transition-colors"
               aria-label="Lukk skjema"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -85,83 +81,75 @@ const ContactForm = ({ isOpen, onClose }) => {
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="p-4 space-y-3">
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
-                  Navn
-                </label>
-                <input
-                  type="text"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-200 
-                    dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 
-                    focus:border-transparent transition-all text-base text-gray-900 
-                    dark:text-white"
-                  required
-                />
-              </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+                Navn
+              </label>
+              <input
+                type="text"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className="w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-200 
+                  dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 
+                  focus:border-transparent transition-all text-sm text-gray-900 
+                  dark:text-white"
+                required
+              />
+            </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
-                  E-post
-                </label>
-                <input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-200 
-                    dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 
-                    focus:border-transparent transition-all text-base text-gray-900 
-                    dark:text-white"
-                  required
-                />
-              </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+                E-post
+              </label>
+              <input
+                type="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                className="w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-200 
+                  dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 
+                  focus:border-transparent transition-all text-sm text-gray-900 
+                  dark:text-white"
+                required
+              />
+            </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
-                  Bedrift
-                </label>
-                <input
-                  type="text"
-                  value={formData.company}
-                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-200 
-                    dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 
-                    focus:border-transparent transition-all text-base text-gray-900 
-                    dark:text-white"
-                />
-              </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+                Bedrift
+              </label>
+              <input
+                type="text"
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                className="w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-200 
+                  dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 
+                  focus:border-transparent transition-all text-sm text-gray-900 
+                  dark:text-white"
+              />
+            </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
-                  Melding
-                </label>
-                <textarea
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  rows={4}
-                  className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-200 
-                    dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 
-                    focus:border-transparent transition-all text-base text-gray-900 
-                    dark:text-white"
-                  required
-                />
-              </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+                Melding
+              </label>
+              <textarea
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                rows={3}
+                className="w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-200 
+                  dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 
+                  focus:border-transparent transition-all text-sm text-gray-900 
+                  dark:text-white"
+                required
+              />
             </div>
 
             {error && (
-              <div className="p-3 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 
-                rounded-lg text-sm">
-                {error}
-              </div>
+              <div className="text-red-500 text-sm">{error}</div>
             )}
 
             {success && (
-              <div className="p-3 bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 
-                rounded-lg text-sm">
-                Melding sendt! Vi tar kontakt snart.
-              </div>
+              <div className="text-green-500 text-sm">Melding sendt! Vi tar kontakt snart.</div>
             )}
 
             <button
