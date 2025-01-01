@@ -1,0 +1,8 @@
+# Create .gitignore file with this content:
+node_modules/
+.next/
+build/
+.env
+.env.local
+dist/
+.vercel/
