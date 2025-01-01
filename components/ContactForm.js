@@ -66,7 +66,7 @@ const ContactForm = ({ isOpen, onClose }) => {
         
         {/* Form Card */}
         <div className="bg-white dark:bg-gray-800 rounded-t-xl md:rounded-xl shadow-2xl 
-          w-full md:w-96 max-h-[90vh] md:max-h-[600px] overflow-auto">
+         w-full md:w-80 max-h-[90vh] md:max-h-[500px] overflow-auto">
           
           {/* Header */}
           <div className="bg-gradient-to-r from-[#1E293B] to-[#334BA1] p-4 
@@ -84,7 +84,7 @@ const ContactForm = ({ isOpen, onClose }) => {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          <form onSubmit={handleSubmit} className="p-4 space-y-3">
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
@@ -167,10 +167,10 @@ const ContactForm = ({ isOpen, onClose }) => {
             <button
               type="submit"
               disabled={sending}
-              className="w-full px-6 py-3 bg-gradient-to-r from-[#1E293B] to-[#334BA1] 
+              className="w-full px-4 py-2 bg-gradient-to-r from-[#1E293B] to-[#334BA1] 
                 text-white rounded-lg font-medium hover:from-[#1E293B] hover:to-[#2D438C] 
-                transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 
-                disabled:cursor-not-allowed text-base"
+                transition-all duration-300 shadow-lg hover:shadow-xl text-sm
+                disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {sending ? 'Sender...' : 'Send melding'}
             </button>
