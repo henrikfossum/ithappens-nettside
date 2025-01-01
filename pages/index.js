@@ -122,11 +122,9 @@ export default function Home() {
           />
           
           <div className="relative z-10 max-w-3xl mx-auto px-6">
-            <h1 className="font-display font-extrabold text-3xl md:text-5xl text-white mb-4 leading-tight">
-              Fokuser på det viktigste,<br />
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                la oss automatisere resten
-              </span>
+            <h1 className="font-display font-extrabold text-3xl md:text-5xl mb-4 leading-tight">
+              <span className="text-white">Fokuser på det viktigste,</span><br />
+              <span className="text-blue-400">la oss automatisere resten</span>
             </h1>
 
             <p className="text-md md:text-lg text-gray-300 mb-8">
