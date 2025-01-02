@@ -366,7 +366,7 @@ export default function Home() {
               </ul>
             </div>
             
-           {/* <div className="flex flex-col items-end md:text-right">
+            {/*<div className="flex flex-col items-end md:text-right">
               <h4 className="text-white font-bold text-lg mb-6">Følg oss</h4>
               <div className="flex gap-4">
                 <a href="#" className="text-gray-300 hover:text-white transition-colors">
@@ -376,8 +376,8 @@ export default function Home() {
                   GitHub
                 </a>
               </div>
-            </div>
-          </div> */}
+            </div> */}
+          </div>
 
           <div className="border-t border-white/10 pt-8 text-center text-gray-400 text-sm">
             © {new Date().getFullYear()} ithappens. Alle rettigheter reservert.
