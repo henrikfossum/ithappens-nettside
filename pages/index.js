@@ -168,59 +168,59 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-xl p-6 
-                         transition-all duration-300 hover:shadow-xl border border-gray-100
-                         dark:border-gray-700">
-              <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/50 rounded-lg mb-4 
+          {/* Automation Card */}
+          <div className="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-xl p-8 
+                        transition-all duration-300 hover:shadow-xl border border-gray-100
+                        dark:border-gray-700 flex flex-col">
+            <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/50 rounded-lg mb-6 
                           flex items-center justify-center">
-                <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" 
-                     stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                        d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Automatisering</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Vi identifiserer flaskehalser og erstatter manuelle prosesser med smarte systemer.
-              </p>
+              <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
             </div>
-
-            <div className="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-xl p-8 
-                         transition-all duration-300 hover:shadow-xl border border-gray-100
-                         dark:border-gray-700">
-              <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/50 rounded-lg mb-6 
-                          flex items-center justify-center">
-                <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" 
-                     stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Systemintegrasjon</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Vi kobler sammen dine eksisterende systemer for sømløs dataflyt og bedre oversikt. 
-                Integrer alt fra ERP og CRM til e-post og regnskapssystemer.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-xl p-8 
-                         transition-all duration-300 hover:shadow-xl border border-gray-100
-                         dark:border-gray-700">
-              <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/50 rounded-lg mb-6 
-                          flex items-center justify-center">
-                <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" 
-                     stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Kundetilpasset Utvikling</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Vi utvikler spesialtilpassede løsninger som møter dine unike behov. Fra enkle verktøy til 
-                komplekse forretningssystemer, alt skreddersydd for din bedrift.
-              </p>
-            </div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Automatisering</h3>
+            <p className="text-gray-600 dark:text-gray-300 flex-grow">
+              Vi identifiserer flaskehalser og erstatter manuelle prosesser med smarte systemer. 
+              Effektiviser arbeidsflyten og frigjør verdifull tid for dine ansatte.
+            </p>
           </div>
+
+          {/* System Integration Card */}
+          <div className="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-xl p-8 
+                        transition-all duration-300 hover:shadow-xl border border-gray-100
+                        dark:border-gray-700 flex flex-col">
+            <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/50 rounded-lg mb-6 
+                          flex items-center justify-center">
+              <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Systemintegrasjon</h3>
+            <p className="text-gray-600 dark:text-gray-300 flex-grow">
+              Vi kobler sammen dine eksisterende systemer for sømløs dataflyt og bedre oversikt. 
+              Integrer alt fra ERP og CRM til e-post og regnskapssystemer for optimal effektivitet.
+            </p>
+          </div>
+
+          {/* Custom Development Card */}
+          <div className="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-xl p-8 
+                        transition-all duration-300 hover:shadow-xl border border-gray-100
+                        dark:border-gray-700 flex flex-col">
+            <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/50 rounded-lg mb-6 
+                          flex items-center justify-center">
+              <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Kundetilpasset Utvikling</h3>
+            <p className="text-gray-600 dark:text-gray-300 flex-grow">
+              Vi utvikler spesialtilpassede løsninger som møter dine unike behov. Fra enkle verktøy til 
+              komplekse forretningssystemer, skreddersydd for å optimalisere din bedrifts prosesser.
+            </p>
+          </div>
+        </div>
         </div>
       </section>
 
