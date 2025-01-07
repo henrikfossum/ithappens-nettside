@@ -296,13 +296,13 @@ export default function Home() {
                   <p className="text-lg text-gray-300 leading-relaxed mb-6">
                     {project.description}
                   </p>
-                  <button className="group px-6 py-3 bg-blue-600 text-white rounded-lg font-medium 
+                  {/*<button className="group px-6 py-3 bg-blue-600 text-white rounded-lg font-medium 
                                 hover:bg-blue-700 transition-all duration-300">
                     Se mer
                     <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">
                       →
                     </span>
-                  </button>
+                  </button>*/}
                 </div>
               </div>
             ))}
