@@ -3,7 +3,6 @@ import NavBar from '../components/NavBar';
 import Image from 'next/image';
 import ContactForm from '../components/ContactForm';
 import { useTheme } from '../context/ThemeContext';
-import { Analytics } from "@vercel/analytics/react";
 
 const ProjectMedia = ({ project, videoRef }) => {
   const isVideo = project.imageUrl.endsWith('.gif') || project.imageUrl.endsWith('.mp4');
