@@ -369,13 +369,6 @@ export default function Home() {
               <h4 className="text-white font-bold text-lg mb-6">Bedriftsinformasjon</h4>
               <ul className="space-y-3">
                 <li className="flex items-center gap-2 text-gray-300 justify-end">
-                  <span>FOSSUM ENK</span>
-                  <svg className="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                </li>
-                <li className="flex items-center gap-2 text-gray-300 justify-end">
                   <span>Org.nr: 934 876 296</span>
                   <svg className="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
@@ -384,6 +377,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
+
             
             {/*<div className="flex flex-col items-end md:text-right">
               <h4 className="text-white font-bold text-lg mb-6">Følg oss</h4>
