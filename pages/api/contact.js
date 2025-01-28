@@ -5,16 +5,40 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
+  // Check if environment variables are set
+  if (!process.env.SMTP_USER || !process.env.SMTP_PASSWORD || 
+      !process.env.SMTP_FROM_EMAIL || !process.env.CONTACT_EMAIL) {
+    console.error('Missing environment variables:', {
+      SMTP_USER: !!process.env.SMTP_USER,
+      SMTP_PASSWORD: !!process.env.SMTP_PASSWORD,
+      SMTP_FROM_EMAIL: !!process.env.SMTP_FROM_EMAIL,
+      CONTACT_EMAIL: !!process.env.CONTACT_EMAIL
+    });
+    return res.status(500).json({ 
+      message: 'Server configuration error',
+      detail: 'Missing required environment variables'
+    });
+  }
+
   try {
     const { name, email, company, message } = req.body;
 
-    // Create transporter using your SMTP settings
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.office365.com',  // Correct host for business accounts
+    console.log('Attempting to create transport with config:', {
+      host: 'smtp.office365.com',
       port: 587,
       secure: false,
       auth: {
-        user: process.env.SMTP_USER,    // your full business email
+        user: process.env.SMTP_USER,
+        pass: '[HIDDEN]'
+      }
+    });
+
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.office365.com',
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASSWORD,
       },
       requireTLS: true,
@@ -22,13 +46,18 @@ export default async function handler(req, res) {
         minVersion: 'TLSv1.2',
         ciphers: 'HIGH',
         rejectUnauthorized: true
-      }
+      },
+      debug: true, // Enable debug logs
+      logger: true // Enable built-in logger
     });
 
-    // Send email
-    await transporter.sendMail({
+    console.log('Testing transporter connection...');
+    await transporter.verify();
+    console.log('Transporter connection verified successfully');
+
+    const mailOptions = {
       from: process.env.SMTP_FROM_EMAIL,
-      to: process.env.CONTACT_EMAIL, // Your receiving email
+      to: process.env.CONTACT_EMAIL,
       subject: `Ny kontaktforespørsel fra ${name}`,
       text: `
         Navn: ${name}
@@ -46,11 +75,37 @@ export default async function handler(req, res) {
         <p><strong>Melding:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,
+    };
+
+    console.log('Attempting to send email with options:', {
+      ...mailOptions,
+      from: mailOptions.from,
+      to: mailOptions.to
     });
+
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully:', info);
 
     res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ message: 'Error sending email' });
+    console.error('Detailed error:', {
+      name: error.name,
+      message: error.message,
+      code: error.code,
+      command: error.command,
+      stack: error.stack
+    });
+
+    let errorMessage = 'Error sending email';
+    if (error.code === 'EAUTH') {
+      errorMessage = 'Authentication failed - check credentials';
+    } else if (error.code === 'ESOCKET') {
+      errorMessage = 'Network connection error';
+    }
+
+    res.status(500).json({ 
+      message: errorMessage,
+      detail: error.message
+    });
   }
 }
