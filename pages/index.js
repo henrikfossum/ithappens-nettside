@@ -5,7 +5,17 @@ import ContactForm from '../components/ContactForm';
 import { useTheme } from '../context/ThemeContext';
 
 const ProjectMedia = ({ project, videoRef }) => {
-  const isVideo = project.imageUrl.endsWith('.gif') || project.imageUrl.endsWith('.mp4');
+  const isVideo = project.imageUrl?.endsWith('.gif') || project.imageUrl?.endsWith('.mp4');
+
+import { QuestionMarkCircleIcon } from '@heroicons/react/outline';
+
+if (!project.imageUrl) {
+  return (
+    <div className="w-full h-60 flex items-center justify-center bg-gray-200 text-gray-500 rounded-lg">
+      <QuestionMarkCircleIcon className="w-16 h-16" />
+    </div>
+  );
+}
 
   if (isVideo) {
     return (
@@ -39,6 +49,7 @@ const ProjectMedia = ({ project, videoRef }) => {
     />
   );
 };
+
 
 export default function Home() {
   const [isContactOpen, setIsContactOpen] = useState(false);
