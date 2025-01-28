@@ -3,18 +3,18 @@ import NavBar from '../components/NavBar';
 import Image from 'next/image';
 import ContactForm from '../components/ContactForm';
 import { useTheme } from '../context/ThemeContext';
-import { QuestionMarkCircleIcon } from '@heroicons/react';
+import { HelpCircle } from 'lucide-react';
 
 const ProjectMedia = ({ project, videoRef }) => {
   const isVideo = project.imageUrl?.endsWith('.gif') || project.imageUrl?.endsWith('.mp4');
 
-if (!project.imageUrl) {
-  return (
-    <div className="w-full h-60 flex items-center justify-center bg-gray-200 text-gray-500 rounded-lg">
-      <QuestionMarkCircleIcon className="w-16 h-16" />
-    </div>
-  );
-}
+  if (!project.imageUrl) {
+    return (
+      <div className="w-full aspect-video flex items-center justify-center bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg">
+        <HelpCircle className="w-24 h-24 text-white/80" />
+      </div>
+    );
+  }
 
   if (isVideo) {
     return (
@@ -48,8 +48,6 @@ if (!project.imageUrl) {
     />
   );
 };
-
-
 export default function Home() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const { darkMode } = useTheme();
