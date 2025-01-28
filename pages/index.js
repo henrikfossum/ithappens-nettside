@@ -49,7 +49,7 @@ export default function Home() {
       projectsSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  const projects = [
+const projects = [
     {
       title: "Mail Assistent",
       description: "E-post assistenten vår bruker kraftig AI for å generere profesjonelle og personlige e-postutkast for rask og effektiv kommunikasjon med kunder.",
@@ -70,6 +70,13 @@ export default function Home() {
       imageUrl: "/images/custom-plattform.png",
       tags: ["Integrasjon", "Dashboard", "API"],
       reversed: false,
+    },
+    {
+      title: "Din Neste Innovasjon",
+      description: "Fra AI-drevet markedsføring og prediktiv analyse til integrasjoner med API-er som automatiserer kundereiser, lagerstyring eller salgsprosesser - vi kan hjelpe deg med å implementere innovative løsninger som gir konkurransefortrinn. Fortell oss om dine utfordringer, så finner vi den perfekte løsningen sammen.",
+      customContent: true,
+      tags: ["AI", "Innovasjon", "Skreddersøm"],
+      reversed: true,
     }
   ];
 
