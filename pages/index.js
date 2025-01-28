@@ -3,7 +3,7 @@ import NavBar from '../components/NavBar';
 import Image from 'next/image';
 import ContactForm from '../components/ContactForm';
 import { useTheme } from '../context/ThemeContext';
-import { QuestionMarkCircleIcon } from '@heroicons/react/outline';
+import { QuestionMarkCircleIcon } from '@heroicons/react';
 
 const ProjectMedia = ({ project, videoRef }) => {
   const isVideo = project.imageUrl?.endsWith('.gif') || project.imageUrl?.endsWith('.mp4');
