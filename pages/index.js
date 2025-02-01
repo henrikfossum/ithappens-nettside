@@ -104,19 +104,62 @@ const projects = [
         },
         { threshold: 0.2 }
       );
-
+  
       if (ref.current) {
         observer.observe(ref.current);
       }
-
+  
       return observer;
     });
-
-    // Cleanup observers
+  
+    // Load Re:amaze Chat Widget script dynamically
+    const script = document.createElement("script");
+    script.src = "https://cdn.reamaze.com/assets/reamaze-loader.js";
+    script.type = "text/javascript";
+    script.async = true;
+    document.body.appendChild(script);
+  
+    // Set Re:amaze configuration
+    window._support = window._support || { ui: {}, user: {} };
+    window._support['account'] = 'ithappens';
+    window._support['ui']['contactMode'] = 'mixed';
+    window._support['ui']['enableKb'] = 'true';
+    window._support['ui']['styles'] = {
+      widgetColor: 'rgba(16, 162, 197, 1)',
+      gradient: true,
+    };
+    window._support['ui']['shoutboxFacesMode'] = 'default';
+    window._support['ui']['shoutboxHeaderLogo'] = true;
+    window._support['ui']['widget'] = {
+      displayOn: 'all',
+      fontSize: 'default',
+      allowBotProcessing: true,
+      slug: 'ithappens-chat-slash-contact-form-shoutbox',
+      label: {
+        text: 'Let us know if you have any questions! 😊',
+        mode: "notification",
+        delay: 3,
+        duration: 30,
+        primary: 'I have a question',
+        secondary: 'No, thanks',
+        sound: true,
+      },
+      position: 'bottom-right',
+      mobilePosition: 'bottom-right'
+    };
+    window._support['apps'] = {
+      faq: { "enabled": true },
+      recentConversations: {},
+      orders: {},
+      shopper: {}
+    };
+  
     return () => {
       observers.forEach((observer) => observer.disconnect());
+      document.body.removeChild(script);
     };
   }, []);
+  
 
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
