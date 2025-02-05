@@ -58,6 +58,13 @@ export default function Home() {
   };
 const projects = [
     {
+      title: "Slack Bot for Markedsanalyse",
+      description: "En AI-drevet Slack-bot som analyserer markedsføringsdata i sanntid, gir innsikter og anbefalinger, og visualiserer resultater direkte i Slack. Perfekt for team som trenger rask og datadrevet beslutningsstøtte.",
+      imageUrl: "/images/slack-bot.gif", // Legg til en passende GIF eller bilde
+      tags: ["AI", "Slack", "Markedsanalyse", "Visualisering"],
+      reversed: false,
+    },
+    {
       title: "Mail Assistent",
       description: "E-post assistenten vår bruker kraftig AI for å generere profesjonelle og personlige e-postutkast for rask og effektiv kommunikasjon med kunder.",
       imageUrl: "/images/mail-assistant.gif",
@@ -80,7 +87,7 @@ const projects = [
     },
     {
       title: "Din Neste Innovasjon",
-      description: "Fra AI-drevet markedsføring og prediktiv analyse til integrasjoner med API-er som automatiserer kundereiser, lagerstyring eller salgsprosesser - vi kan hjelpe deg med å implementere innovative løsninger som gir konkurransefortrinn. Fortell oss om dine utfordringer, så finner vi den perfekte løsningen sammen.",
+      description: "Har du en utfordring som trenger en smart løsning? Vi kombinerer AI, automatisering og skreddersydde systemer for å skape løsninger som gir resultater. Enten det er å øke salget, effektivisere logistikk eller forbedre kundeopplevelsen – vi finner den beste måten å hjelpe deg på.",
       customContent: true,
       tags: ["AI", "Innovasjon", "Skreddersøm"],
       reversed: true,
