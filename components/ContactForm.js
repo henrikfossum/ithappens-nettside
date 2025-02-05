@@ -183,10 +183,7 @@ const ContactForm = ({ isOpen, onClose }) => {
 
             {/* Privacy Assurance */}
             <p className="text-xs text-gray-500 dark:text-gray-400 text-center mt-2">
-              Vi deler ikke din informasjon med andre. Les vår{' '}
-              <a href="/personvern" className="text-blue-500 hover:underline">
-                personvernerklæring
-              </a>.
+              Vi deler ikke din informasjon med andre.
             </p>
           </form>
         </div>
