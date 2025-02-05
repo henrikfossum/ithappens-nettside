@@ -60,7 +60,7 @@ const projects = [
     {
       title: "Slack Bot for Markedsanalyse",
       description: "En AI-drevet Slack-bot som analyserer markedsføringsdata i sanntid, gir innsikter og anbefalinger, og visualiserer resultater direkte i Slack. Perfekt for team som trenger rask og datadrevet beslutningsstøtte.",
-      imageUrl: "/images/slack-bot.gif", // Legg til en passende GIF eller bilde
+      imageUrl: "/images/slack_bot.mp4", // Legg til en passende GIF eller bilde
       tags: ["AI", "Slack", "Markedsanalyse", "Visualisering"],
       reversed: false,
     },
@@ -69,28 +69,28 @@ const projects = [
       description: "E-post assistenten vår bruker kraftig AI for å generere profesjonelle og personlige e-postutkast for rask og effektiv kommunikasjon med kunder.",
       imageUrl: "/images/mail-assistant.gif",
       tags: ["OpenAI", "Gmail", "Automatisering"],
-      reversed: false,
+      reversed: true,
     },
     {
       title: "PostNord Integrasjon",
       description: "Integrert fraktløsning som automatisk håndterer label-generering, sporing og automatiske statusoppdateringer til kunder.",
       imageUrl: "/images/postnord-integration.gif",
       tags: ["PostNord", "API", "Logistikk"],
-      reversed: true,
+      reversed: false,
     },
     {
       title: "Skreddersydd Plattform",
       description: "Tilpasset systemintegrasjon som forenkler arbeidsflyten ved å koble sammen alle deres forretningssystemer i ett intuitivt grensesnitt.",
       imageUrl: "/images/custom-plattform.png",
       tags: ["Integrasjon", "Dashboard", "API"],
-      reversed: false,
+      reversed: true,
     },
     {
       title: "Din Neste Innovasjon",
       description: "Har du en utfordring som trenger en smart løsning? Vi kombinerer AI, automatisering og skreddersydde systemer for å skape løsninger som gir resultater. Enten det er å øke salget, effektivisere logistikk eller forbedre kundeopplevelsen – vi finner den beste måten å hjelpe deg på.",
       customContent: true,
       tags: ["AI", "Innovasjon", "Skreddersøm"],
-      reversed: true,
+      reversed: false,
     }
   ];
 
