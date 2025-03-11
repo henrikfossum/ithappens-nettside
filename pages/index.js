@@ -17,7 +17,7 @@ export default function Home() {
   const projects = [
     {
       title: "Shopify-system for Unaas Cycling",
-      description: "Unaas Cycling brukte tidligere timer hver dag på manuell ordrehåndtering. Jeg utviklet et skreddersydd system som automatiserte disse prosessene og frigjorde over 15 timer i uken for teamet.",
+      description: "Unaas Cycling brukte flere timer hver dag på manuell ordrehåndtering. Jeg utviklet et skreddersydd system som automatiserte disse prosessene og frigjorde over 15 timer i uken for teamet.",
       images: [
         "/images/unaas_system_wht.png",
         "/images/unaas_system_admin_wht.png",
