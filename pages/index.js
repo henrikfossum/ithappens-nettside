@@ -132,7 +132,7 @@ export default function Home() {
       ],
       tech: ["Kundeopplevelse", "Automatisering", "Prosessoptimalisering"],
       results: [
-        { label: "Status", value: "Utviklingsfase" },
+        { label: "Status", value: "Utvikles" },
         { label: "Forventet lansering", value: "Vår 2025" }
       ]
     },
