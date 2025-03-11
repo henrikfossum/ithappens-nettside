@@ -111,7 +111,7 @@ export default function Home() {
   // Kundesitater data
   const testimonials = [
     {
-      quote: "Henrik har vært superkjapp og enkel å jobbe med, og både kommunikasjon og løsninger har vært 10/10!",
+      quote: "Henrik har vært superkjapp og enkel å jobbe med, og både kommunikasjon og løsninger har vært 10/10!                       ",
       name: "Kristoffer Wright",
       title: "Co-Founder",
       company: "Silly Santa",
