@@ -9,6 +9,86 @@ import Navbar from '../components/NavBar.jsx';
 import ContactForm from '../components/ContactForm';
 import ReturnPortalToggle from '../components/ReturnPortalToggle';
 
+function ProjectImageCarousel({ lightImages, darkImages, labels }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Ensure we have valid image arrays
+  const validLightImages = lightImages || [];
+  const validDarkImages = darkImages || validLightImages;
+
+  useEffect(() => {
+    // If not hovered, auto-switch images every 5 seconds
+    if (!isHovered && validLightImages.length > 1) {
+      const intervalId = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % validLightImages.length);
+      }, 5000);
+
+      return () => clearInterval(intervalId);
+    }
+  }, [isHovered, validLightImages.length]);
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % validLightImages.length);
+  };
+
+  return (
+    <div 
+      className="relative group"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="block dark:hidden">
+        <Image 
+          src={validLightImages[currentIndex]}
+          alt={labels ? labels[currentIndex] : `Project image ${currentIndex + 1}`}
+          width={600}
+          height={400}
+          className="w-full aspect-video object-cover"
+        />
+      </div>
+      <div className="hidden dark:block">
+        <Image 
+          src={validDarkImages[currentIndex]}
+          alt={labels ? labels[currentIndex] : `Project image ${currentIndex + 1}`}
+          width={600}
+          height={400}
+          className="w-full aspect-video object-cover"
+        />
+      </div>
+
+      {/* Navigation dots */}
+      {validLightImages.length > 1 && (
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {validLightImages.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                currentIndex === idx 
+                  ? 'bg-white scale-125' 
+                  : 'bg-white/50 hover:bg-white/75'
+              }`}
+              aria-label={`Go to image ${idx + 1}`}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Next button */}
+      {validLightImages.length > 1 && (
+        <button
+          onClick={nextImage}
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-2 transition-all duration-300 z-10 opacity-0 group-hover:opacity-100"
+          aria-label="Next image"
+        >
+          <ChevronRight className="text-white w-5 h-5" />
+        </button>
+      )}
+    </div>
+  );
+}
+
 export default function Home() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const videoRefs = useRef([]);
@@ -156,87 +236,12 @@ export default function Home() {
 
   // Smooth scroll function
   const scrollToSection = (id) => {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
-  function ProjectImageCarousel({ lightImages, darkImages, labels }) {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isHovered, setIsHovered] = useState(false);
-  
-    // Ensure we have valid image arrays
-    const validLightImages = lightImages || [];
-    const validDarkImages = darkImages || validLightImages;
-  
-    useEffect(() => {
-      // If not hovered, auto-switch images every 5 seconds
-      if (!isHovered && validLightImages.length > 1) {
-        const intervalId = setInterval(() => {
-          setCurrentIndex((prev) => (prev + 1) % validLightImages.length);
-        }, 5000);
-  
-        return () => clearInterval(intervalId);
-      }
-    }, [isHovered, validLightImages.length]);
-  
-    const nextImage = () => {
-      setCurrentIndex((prev) => (prev + 1) % validLightImages.length);
-    };
-  
-    return (
-      <div 
-        className="relative group"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div className="block dark:hidden">
-          <Image 
-            src={validLightImages[currentIndex]}
-            alt={labels ? labels[currentIndex] : `Project image ${currentIndex + 1}`}
-            width={600}
-            height={400}
-            className="w-full aspect-video object-cover"
-          />
-        </div>
-        <div className="hidden dark:block">
-          <Image 
-            src={validDarkImages[currentIndex]}
-            alt={labels ? labels[currentIndex] : `Project image ${currentIndex + 1}`}
-            width={600}
-            height={400}
-            className="w-full aspect-video object-cover"
-          />
-        </div>
-  
-        {/* Navigation dots */}
-        {validLightImages.length > 1 && (
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {validLightImages.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  currentIndex === idx 
-                    ? 'bg-white scale-125' 
-                    : 'bg-white/50 hover:bg-white/75'
-                }`}
-                aria-label={`Go to image ${idx + 1}`}
-              />
-            ))}
-          </div>
-        )}
-  
-        {/* Next button */}
-        {validLightImages.length > 1 && (
-          <button
-            onClick={nextImage}
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-2 transition-all duration-300 z-10 opacity-0 group-hover:opacity-100"
-            aria-label="Next image"
-          >
-            <ChevronRight className="text-white w-5 h-5" />
-          </button>
-        )}
-      </div>
-    );
-  }
+
   return (
     <>
       <Head>
@@ -281,9 +286,10 @@ export default function Home() {
   <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 -z-10"></div>
     
   {/* Decorative elements */}
-  <div className="absolute top-0 right-0 w-2/3 h-2/3 opacity-20 dark:opacity-10">
-    <div className="absolute right-0 top-0 w-full h-full bg-blue-400 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-  </div>
+  <div className="absolute top-0 right-0 w-2/3 h-2/3 opacity-20 dark:opacity-10 pointer-events-none">
+  <div className="absolute right-0 top-0 w-full h-full bg-blue-400 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+</div>
+
     
   <div className="container mx-auto px-4 md:px-6">
     <div className="flex flex-col md:flex-row items-center max-w-6xl mx-auto">

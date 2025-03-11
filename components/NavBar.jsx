@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
+import { ChevronRight } from 'lucide-react';
 
 export default function Navbar({ onContactClick }) {
   const [scrolled, setScrolled] = useState(false);
