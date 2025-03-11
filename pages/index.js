@@ -7,6 +7,7 @@ import { CheckCircle, ArrowRight, MessageCircle, Code, Layers, Zap, BarChart, Ch
 // Components
 import Navbar from '../components/NavBar.jsx';
 import ContactForm from '../components/ContactForm';
+import ReturnPortalToggle from '../components/ReturnPortalToggle';
 
 export default function Home() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -16,7 +17,7 @@ export default function Home() {
   const projects = [
     {
       title: "Shopify-system for Unaas Cycling",
-      description: "Et komplett system for ordre, lager og verkstedsplanlegging som sparte teamet for over 15 timer i uken med manuelt arbeid.",
+      description: "Unaas Cycling brukte tidligere timer hver dag på manuell ordrehåndtering. Jeg utviklet et skreddersydd system som automatiserte disse prosessene og frigjorde over 15 timer i uken for teamet.",
       images: [
         "/images/unaas_system_wht.png",
         "/images/unaas_system_admin_wht.png",
@@ -35,12 +36,12 @@ export default function Home() {
       tech: ["Shopify", "Automatisering", "Systemintegrasjon"],
       results: [
         { label: "Tidsbesparelse", value: "15+ timer/uke" },
-        { label: "Reduserte feil", value: "98%" }
+        { label: "Reduserte feil", value: "60%" }
       ]
     },
     {
       title: "Retur-portal for Silly Santa",
-      description: "Under utvikling: En innovativ løsning som vil automatisere og forenkle returprosessen for nettbutikker, med skreddersydd admin-dashboard.",
+      description: "Under utvikling: En skreddersydd returportal som vil eliminere manuelle returprosesser for nettbutikker og gi verdifull innsikt i hvorfor produkter returneres.",
       images: [
         "/images/return_demo.mp4",
         "/images/admin_return.mp4"
@@ -52,12 +53,12 @@ export default function Home() {
       tech: ["Kundeopplevelse", "Automatisering", "Prosessoptimalisering"],
       results: [
         { label: "Status", value: "Utviklingsfase" },
-        { label: "Forventet lansering", value: "Høst 2024" }
+        { label: "Forventet lansering", value: "Vår 2025" }
       ]
     },
     {
       title: "AI-kundeservice for Silly Santa",
-      description: "En intelligent chatbot som kategoriserer og besvarer kundehenvendelser automatisk basert på tidligere svar og bedriftens retningslinjer.",
+      description: "En intelligent chatbot som kategoriserer og besvarer kundehenvendelser automatisk basert på tidligere svar og bedriftens retningslinjer. Koblet opp mot CRM-systemet slik at kundeservice enkelt kan ta over krevende henvendelser. ",
       image: "/images/sillyAI.mp4",
       isVideo: true,
       tech: ["AI", "Kundeservice", "Integrasjon"],
@@ -69,12 +70,12 @@ export default function Home() {
     {
       title: "PostNord-integrasjon for Unaas",
       description: "Automatisert forsendelsessystem som genererer fraktbrev, håndterer sporing og sender oppdateringer til kundene automatisk.",
-      image: "/images/postnord-integration.mp4",
+      image: "/images/sending_video.mp4",
       isVideo: true,
       tech: ["API-integrasjon", "Logistikk", "Automatisering"],
       results: [
-        { label: "Behandlingstid", value: "↓ 68%" },
-        { label: "Feilsendinger", value: "↓ 94%" }
+        { label: "Behandlingstid", value: "↓ 70%" },
+        { label: "Feilsendinger", value: "↓ 50%" }
       ]
     }
   ];
@@ -83,44 +84,40 @@ export default function Home() {
   const services = [
     {
       title: "E-commerce løsninger",
-      description: "Jeg lager skreddersydde Shopify-løsninger som forenkler driften av nettbutikken din og gir bedre kundeopplevelser.",
+      description: "Jeg utvikler skreddersydde løsninger som gjør nettbutikken din enklere å drive og gir kundene dine en bedre handleopplevelse.",
       icon: <Code className="h-6 w-6" />,
       color: "bg-blue-600 dark:bg-blue-500",
-      metrics: "85% reduksjon i manuelle oppgaver"
     },
     {
       title: "Systemintegrasjon",
-      description: "Jeg kobler sammen systemene dine så data flyter fritt mellom dem, og du slipper dobbeltarbeid og manuelle overføringer.",
+      description: "Jeg får systemene dine til å jobbe sammen, slik at informasjonen flyter problemfritt og du slipper tidkrevende dobbeltarbeid.",
       icon: <Layers className="h-6 w-6" />,
       color: "bg-blue-600 dark:bg-blue-500",
-      metrics: "99.8% reduksjon i feil og dobbeltarbeid"
     },
     {
       title: "Automatisering",
-      description: "Jeg setter opp smarte løsninger som automatiserer kjedelige, gjentakende oppgaver så du kan fokusere på det som er viktig.",
+      description: "Jeg skaper løsninger som tar seg av de repetitive oppgavene, så du kan bruke tiden din på det som virkelig betyr noe for virksomheten.",
       icon: <Zap className="h-6 w-6" />,
       color: "bg-blue-600 dark:bg-blue-500",
-      metrics: "2.6x økning i kundeservice-kapasitet"
     },
     {
       title: "Tilpassede løsninger",
-      description: "Jeg lytter til dine unike behov og designer skreddersydde løsninger som gjør hverdagen din enklere.",
+      description: "Jeg lytter til dine behov og designer tilpassede løsninger som gjør hverdagen din enklere.",
       icon: <Zap className="h-6 w-6" />,
       color: "bg-blue-600 dark:bg-blue-500",
-      metrics: "100% kundetilpasset"
     }
   ];
 
   // Kundesitater data
   const testimonials = [
     {
-      quote: "Automatiseringen har redusert henvendelser med 40% og frigjort verdifull tid for teamet. Chatboten håndterer nå de vanligste spørsmålene helt av seg selv.",
-      name: "Maria Andersen",
+      quote: "Henrik har vært superkjapp og enkel å jobbe med, og både kommunikasjon og løsninger har vært 10/10!",
+      name: "Kristoffer Wright",
       company: "Silly Santa",
-      image: "/images/testimonial-1.jpg",
+      image: "/images/testimonial-1.png",
     },
     {
-      quote: "Fra et enkelt bestillingssystem har løsningen utviklet seg til å bli ryggraden i driften vår. Vi sparer flere timer daglig på administrative oppgaver.",
+      quote: "Superenkelt samarbeid og raske leveranser! Systemet har gjort ordre- og lagerstyringen vår mye enklere og mer oversiktlig.",
       name: "Espen Unaas",
       company: "Unaas Cycling",
       image: "/images/testimonial-2.jpg",
@@ -129,35 +126,31 @@ export default function Home() {
   
   // Video avspilling
   useEffect(() => {
-    videoRefs.current = videoRefs.current.slice(0, projects.filter(p => p.isVideo).length);
+    // Filter out undefined or null refs so only actual video elements are processed
+    const videoElements = videoRefs.current.filter(el => el);
     
-    const observers = videoRefs.current.map((ref, i) => {
-      if (!ref || !ref.current) return null;
-      
+    const observers = videoElements.map(videoEl => {
       const observer = new IntersectionObserver(
         (entries) => {
           const entry = entries[0];
           if (entry.isIntersecting) {
-            ref.current.play();
+            videoEl.play();
           } else {
-            ref.current.pause();
-            ref.current.currentTime = 0;
+            videoEl.pause();
+            videoEl.currentTime = 0;
           }
         },
         { threshold: 0.5 }
       );
-      
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-      
+      observer.observe(videoEl);
       return observer;
     });
     
     return () => {
-      observers.forEach((observer) => observer && observer.disconnect());
+      observers.forEach(observer => observer && observer.disconnect());
     };
   }, []);
+  
 
   // Smooth scroll function
   const scrollToSection = (id) => {
@@ -300,7 +293,7 @@ export default function Home() {
         >
           <div className="inline-flex items-center bg-blue-100 dark:bg-blue-900/40 px-3 py-1 rounded-full text-xs font-medium text-blue-700 dark:text-blue-300 mb-6">
             <span className="mr-1.5">•</span>
-            SHOPIFY & AUTOMATISERING
+            ECOMMERCE & AUTOMATISERING
           </div>
             
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
@@ -326,15 +319,6 @@ export default function Home() {
             >
               Se prosjekter
             </button>
-          </div>
-            
-          <div className="flex items-center gap-4">
-            <p className="text-sm text-slate-600 dark:text-slate-400">Jobber med:</p>
-            <div className="flex items-center gap-5">
-              <Image src="/images/shopify-logo.svg" alt="Shopify" width={80} height={24} className="h-5 w-auto" />
-              <Image src="/images/postnord-logo.svg" alt="PostNord" width={80} height={24} className="h-5 w-auto" />
-              <Image src="/images/openai-logo.svg" alt="OpenAI" width={80} height={24} className="h-5 w-auto" />
-            </div>
           </div>
         </motion.div>
       </div>
@@ -378,8 +362,8 @@ export default function Home() {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-lg font-bold text-white">Automatisert dashboard</h3>
-                  <p className="text-slate-300 text-sm">Få full oversikt over drift og nøkkeltall i sanntid</p>
+                  <h3 className="text-lg font-bold text-white">Unaas Cycling sin platform</h3>
+                  <p className="text-slate-300 text-sm">Alt av systemer samlet på et sted</p>
                 </div>
               </div>
             </div>
@@ -399,10 +383,10 @@ export default function Home() {
                 TJENESTER
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                Hva jeg kan hjelpe med
+                Hvordan jeg kan hjelpe
               </h2>
               <p className="text-lg text-slate-600 dark:text-slate-400">
-                Skreddersydde løsninger som løser reelle problemer og gir målbare resultater
+                Praktiske løsninger for faktiske utfordringer med resultater du kan måle
               </p>
             </div>
             
@@ -429,12 +413,6 @@ export default function Home() {
                       <p className="text-slate-600 dark:text-slate-400 mb-5">
                         {service.description}
                       </p>
-                      
-                      <div className="bg-slate-50 dark:bg-slate-900/50 px-4 py-3 rounded-lg">
-                        <p className="font-semibold text-blue-600 dark:text-blue-400">
-                          {service.metrics}
-                        </p>
-                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -461,7 +439,7 @@ export default function Home() {
                   Hvorfor velge meg?
                 </h2>
                 <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
-                  Jeg tenker annerledes enn tradisjonelle utviklere - fokus på resultater, ikke bare kode.
+                  Jeg ser forbi koden til det som virkelig betyr noe - de konkrete resultatene for din bedrift.
                 </p>
                 
                 <ul className="space-y-6">
@@ -476,7 +454,7 @@ export default function Home() {
                         Erfaring fra butikk
                       </h3>
                       <p className="text-slate-600 dark:text-slate-400">
-                        Jeg har jobbet i butikk før jeg ble utvikler, så jeg forstår de praktiske utfordringene du møter i hverdagen.
+                        Med bakgrunn fra butikk forstår jeg hverdagens praktiske utfordringer - ikke bare den tekniske siden.
                       </p>
                     </div>
                   </li>
@@ -492,7 +470,7 @@ export default function Home() {
                         Resultater, ikke timer
                       </h3>
                       <p className="text-slate-600 dark:text-slate-400">
-                        Jeg fokuserer på å levere reell verdi. Om ikke løsningen min sparer deg for tid eller penger, betaler du ingenting.
+                        For meg handler det om verdiskapning, ikke fakturerte timer. Hvis løsningen ikke sparer deg for tid eller penger, koster den deg ingenting.
                       </p>
                     </div>
                   </li>
@@ -551,10 +529,11 @@ export default function Home() {
         PROSJEKTER
       </div>
       <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-        Se hva jeg har bygget
+        Mine tidligere prosjekter
       </h2>
       <p className="text-lg text-slate-600 dark:text-slate-400">
-        Løsninger som har spart tid, redusert feil og økt inntekter for kundene mine
+        Løsninger som har gitt kundene mine mer tid, færre feil og bedre inntjening
+    
       </p>
     </div>
     
@@ -575,32 +554,61 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className={`${index % 2 === 1 ? 'md:order-last' : ''}`}>
             <div className="overflow-hidden rounded-lg shadow-md">
-              {project.images ? (
-                <ProjectImageCarousel 
-                  lightImages={project.images} 
-                  darkImages={project.darkImages} 
-                  labels={project.imageLabels}
-                />
-              ) : project.isVideo ? (
-                <video
-                  ref={el => videoRefs.current[index] = { current: el }}
-                  src={project.image}
-                  loop
-                  muted
-                  playsInline
-                  className="w-full aspect-video object-cover"
-                >
-                  Din nettleser støtter ikke videoavspilling.
-                </video>
-              ) : (
-                <Image 
-                  src={project.image}
-                  alt={project.title}
-                  width={600}
-                  height={400}
-                  className="w-full aspect-video object-cover"
-                />
-              )}
+            {project.title === "Retur-portal for Silly Santa" ? (
+  <ReturnPortalToggle
+    media={project.images}
+    labels={project.imageLabels}
+  />
+) : project.images ? (
+  <ProjectImageCarousel 
+    lightImages={project.images} 
+    darkImages={project.darkImages} 
+    labels={project.imageLabels}
+  />
+) : project.isVideo ? (
+  project.image.includes("sending_video") ? (
+    <div className="relative" style={{ aspectRatio: "1918/820" }}>
+      <video
+        ref={el => {
+          if (el && !videoRefs.current.includes(el)) {
+            videoRefs.current.push(el);
+          }
+        }}
+        src={project.image}
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        Din nettleser støtter ikke videoavspilling.
+      </video>
+    </div>
+  ) : (
+    <video
+      ref={el => {
+        if (el && !videoRefs.current.includes(el)) {
+          videoRefs.current.push(el);
+        }
+      }}
+      src={project.image}
+      loop
+      muted
+      playsInline
+      className="w-full aspect-video object-cover"
+    >
+      Din nettleser støtter ikke videoavspilling.
+    </video>
+  )
+) : (
+  <Image 
+    src={project.image}
+    alt={project.title}
+    width={600}
+    height={400}
+    className="w-full aspect-video object-cover"
+  />
+)}
+
             </div>
           </div>
             
@@ -711,7 +719,7 @@ export default function Home() {
                   La oss løse utfordringene dine sammen
                 </h2>
                 <p className="text-xl text-slate-700 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
-                  Ta en uforpliktende samtale om hvordan jeg kan hjelpe din virksomhet å spare tid og penger.
+                  Ta en uforpliktende samtale om hvordan jeg kan hjelpe din virksomhet å spare tid og ressurser.
                 </p>
                 
                 <button 
