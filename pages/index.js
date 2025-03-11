@@ -143,7 +143,7 @@ export default function Home() {
       isVideo: true,
       tech: ["AI", "Kundeservice", "Integrasjon"],
       results: [
-        { label: "Responstid", value: "↓ 70%" },
+        { label: "Responstid", value: "↓ 60%" },
         { label: "Løsningsgrad", value: " 55%" }
       ]
     },
