@@ -183,7 +183,7 @@ export default function Home() {
     {
       title: "Tilpassede løsninger",
       description: "Jeg lytter til dine behov og designer tilpassede løsninger som gjør hverdagen din enklere.",
-      icon: <Settings className="h-6 w-6" />,
+      icon: <Zap className="h-6 w-6" />,
       color: "bg-blue-600 dark:bg-blue-500",
     }
   ];
@@ -198,7 +198,7 @@ export default function Home() {
       image: "/images/testimonial-1.png",
     },
     {
-      quote: "Superenkelt samarbeid og raske leveranser! Systemet har gjort ordre- og lagerstyringen vår mye enklere og mer oversiktlig.",
+      quote: "Enkelt samarbeid og raske leveranser! Systemet har gjort ordre- og lagerstyringen vår mye enklere og mer oversiktlig.",
       name: "Espen Unaas",
       title: "Daglig leder",
       company: "Unaas Cycling",
