@@ -727,7 +727,7 @@ export default function Home() {
                   La oss løse utfordringene dine sammen
                 </h2>
                 <p className="text-xl text-slate-700 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
-                  Ta en uforpliktende samtale om hvordan jeg kan hjelpe din virksomhet å spare tid og ressurser.
+                  Ta en uforpliktende samtale om hvordan jeg kan hjelpe virksomheten din med å spare tid og ressurser.
                 </p>
                 
                 <button 
