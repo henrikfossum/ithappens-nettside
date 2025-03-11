@@ -64,7 +64,7 @@ export default function Home() {
       tech: ["AI", "Kundeservice", "Integrasjon"],
       results: [
         { label: "Responstid", value: "↓ 70%" },
-        { label: "Løsningsgrad", value: " 65% av alle henvendelser" }
+        { label: "Løsningsgrad", value: " 55%" }
       ]
     },
     {
