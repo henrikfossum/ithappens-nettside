@@ -113,12 +113,14 @@ export default function Home() {
     {
       quote: "Henrik har vært superkjapp og enkel å jobbe med, og både kommunikasjon og løsninger har vært 10/10!",
       name: "Kristoffer Wright",
+      title: "Co-Founder",
       company: "Silly Santa",
       image: "/images/testimonial-1.png",
     },
     {
       quote: "Superenkelt samarbeid og raske leveranser! Systemet har gjort ordre- og lagerstyringen vår mye enklere og mer oversiktlig.",
       name: "Espen Unaas",
+      title: "Daglig leder",
       company: "Unaas Cycling",
       image: "/images/testimonial-2.jpg",
     }
@@ -697,7 +699,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="font-semibold text-slate-900 dark:text-white">{testimonial.name}</p>
-                      <p className="text-blue-600 dark:text-blue-400 text-sm">{testimonial.company}</p>
+                      <p className="text-blue-600 dark:text-blue-400 text-sm">{testimonial.title}, {testimonial.company}</p>
                     </div>
                   </div>
                 </motion.div>
