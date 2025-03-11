@@ -63,8 +63,8 @@ export default function Home() {
       isVideo: true,
       tech: ["AI", "Kundeservice", "Integrasjon"],
       results: [
-        { label: "Responstid", value: "↓ 73%" },
-        { label: "Kundetilfredshet", value: "↑ 29%" }
+        { label: "Responstid", value: "↓ 70%" },
+        { label: "Løsningsgrad", value: " 65% av alle henvendelser" }
       ]
     },
     {
@@ -75,7 +75,7 @@ export default function Home() {
       tech: ["API-integrasjon", "Logistikk", "Automatisering"],
       results: [
         { label: "Behandlingstid", value: "↓ 70%" },
-        { label: "Feilsendinger", value: "↓ 50%" }
+        { label: "Feilsendinger", value: "↓ 40%" }
       ]
     }
   ];
