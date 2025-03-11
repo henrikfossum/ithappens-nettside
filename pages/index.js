@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, MessageCircle, Code, Layers, Zap, BarChart, ChevronRight } from 'lucide-react';
+import { CheckCircle, ArrowRight, MessageCircle, Code, Layers, Zap, BarChart, ChevronRight, Settings } from 'lucide-react';
 
 // Components
 import Navbar from '../components/NavBar.jsx';
@@ -183,7 +183,7 @@ export default function Home() {
     {
       title: "Tilpassede løsninger",
       description: "Jeg lytter til dine behov og designer tilpassede løsninger som gjør hverdagen din enklere.",
-      icon: <Zap className="h-6 w-6" />,
+      icon: <Settings className="h-6 w-6" />,
       color: "bg-blue-600 dark:bg-blue-500",
     }
   ];
