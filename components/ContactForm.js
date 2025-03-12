@@ -153,7 +153,7 @@ const ContactForm = ({ isOpen, onClose }) => {
 
             {success && (
               <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-green-600 dark:text-green-400 px-3 py-2 rounded-lg text-xs">
-                Melding sendt! Jeg tar kontakt snart.
+                Melding sendt! Jeg tar kontakt snart. 
               </div>
             )}
 
