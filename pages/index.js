@@ -8,6 +8,8 @@ import { CheckCircle, ArrowRight, MessageCircle, Code, Layers, Zap, BarChart, Ch
 import Navbar from '../components/NavBar.jsx';
 import ContactForm from '../components/ContactForm';
 import ReturnPortalToggle from '../components/ReturnPortalToggle';
+import AIServiceToggle from '../components/AIServiceToggle';
+
 
 function ProjectImageCarousel({ lightImages, darkImages, labels }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -138,13 +140,19 @@ export default function Home() {
     },
     {
       title: "AI-kundeservice for Silly Santa",
-      description: "En intelligent chatbot som kategoriserer og besvarer kundehenvendelser automatisk basert på tidligere svar og bedriftens retningslinjer. Koblet opp mot CRM-systemet slik at kundeservice enkelt kan ta over krevende henvendelser. ",
-      image: "/images/sillyAI.mp4",
-      isVideo: true,
-      tech: ["AI", "Kundeservice", "Integrasjon"],
+      description: "Todelt AI-system med kundevendt chatbot og backend-løsning som håndterer alle kommunikasjonskanaler. Systemet kategoriserer henvendelser, fjerner spam, oversetter, henter ordre informasjon fra Shopify og oppsummerer alt i CRM-systemet.",
+      images: [
+        "/images/sillyAI.mp4",
+        "/images/reamaze_cropped.png"
+      ],
+      imageLabels: [
+        "AI Chatbot",
+        "CRM-integrasjon"
+      ],
+      tech: ["AI", "Kundeservice", "Integrasjon", "Automatisk kategorisering"],
       results: [
-        { label: "Responstid", value: "↓ 60%" },
-        { label: "Løsningsgrad", value: " 55%" }
+        { label: "Løsningsgrad", value: "55%" },
+        { label: "Kundetilfredshet", value: "4/5" }
       ]
     },
     {
@@ -562,7 +570,12 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className={`${index % 2 === 1 ? 'md:order-last' : ''}`}>
             <div className="overflow-hidden rounded-lg shadow-md">
-            {project.title === "Retur-portal for Silly Santa" ? (
+            {project.title === "AI-kundeservice for Silly Santa" ? (
+  <AIServiceToggle
+    media={project.images}
+    labels={project.imageLabels}
+  />
+) : project.title === "Retur-portal for Silly Santa" ? (
   <ReturnPortalToggle
     media={project.images}
     labels={project.imageLabels}
